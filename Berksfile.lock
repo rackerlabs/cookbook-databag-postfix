@@ -1,0 +1,10 @@
+DEPENDENCIES
+  designate-postfix
+    path: .
+    metadata: true
+  postfix (= 3.6.2)
+
+GRAPH
+  designate-postfix (0.1.0)
+    postfix (>= 0.0.0)
+  postfix (3.6.2)
