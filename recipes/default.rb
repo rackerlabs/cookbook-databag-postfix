@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: designate-postfix
+# Cookbook Name:: databag-postfix
 # Recipe:: default
 #
-# Copyright (C) 2014 YOUR_NAME
+# Copyright (C) 2014 Rackspace
 #
 # All rights reserved - Do Not Redistribute
 #
