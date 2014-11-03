@@ -1,8 +1,9 @@
 name             'designate-postfix'
-maintainer       'YOUR_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Rackspace'
+maintainer_email 'dnsaas@rackspace.com'
 license          'All rights reserved'
 description      'Installs/Configures designate-postfix'
 long_description 'Installs/Configures designate-postfix'
-version          '0.1.0'
+version          '0.1.1'
 
+depends          'postfix'

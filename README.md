@@ -1,27 +1,20 @@
 # designate-postfix-cookbook
 
-TODO: Enter the cookbook description here.
+The writeup by jtimberman at http://jtimberman.housepub.org/blog/2011/08/06/encrypted-data-bag-for-postfix-sasl-authentication/
+assumes you can hack on the community cookbook's recipes/templates.  Lets not.
+
+This cookbook serves to allow you to put `[:postfix][:sasl][:smtp_sasl_user_name]`
+and `[:postfix][:sasl][:smtp_sasl_passwd]` into an encrypted data bag
+(`Chef::EncryptedDataBagItem.load("secrets","postfix")`).
+
+This approach uses the wrapper cookbook approach to override.
+
+Scope of this cookbook was to allow products to use the `mailgun` API 
+but put their SASL bits into encrypted data bags.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
-
-## Attributes
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['designate-postfix']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+All of them?
 
 ## Usage
 
@@ -37,6 +30,11 @@ Include `designate-postfix` in your node's `run_list`:
 }
 ```
 
+Have an encrypted data bag called `secrets` with a item called `postfix`.  In
+that data bag, set `user` and `passwd`.  Should be all you need.
+
+This recipe should call the dependent postfix recipes with overrides.
+
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Rackspace <dnsaas@rackspace.com>
